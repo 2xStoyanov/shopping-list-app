@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Item</title>
+</head>
+<body>
+<h1>Edit Item</h1>
+
+<form th:object="${item}" th:action="@{/items/edit}" method="post">
+    <input type="hidden" th:field="*{id.id}" />
+    <label>Item Name: <input type="text" th:field="*{itemName}" /></label><br/>
+    <label>Quantity: <input type="text" th:field="*{quantity}" /></label><br/>
+    <label>Category: <input type="text" th:field="*{category}" /></label><br/>
+    <label>Status: <input type="text" th:field="*{id.status}" /></label><br/>
+    <label>Priority: <input type="text" th:field="*{id.priority}" /></label><br/>
+    <button type="submit">Save</button>
+</form>
+
+<a th:href="@{/items/list}">Back to List</a>
+
+</body>
+</html>

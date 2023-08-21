@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Item Details</title>
+</head>
+<body>
+<h1>Item Details</h1>
+
+<table>
+    <tr>
+        <th>Item Name:</th>
+        <td th:text="${item.itemName}"></td>
+    </tr>
+    <tr>
+        <th>Quantity:</th>
+        <td th:text="${item.quantity}"></td>
+    </tr>
+    <tr>
+        <th>Category:</th>
+        <td th:text="${item.category}"></td>
+    </tr>
+    <tr>
+        <th>Status:</th>
+        <td th:text="${item.id.status}"></td>
+    </tr>
+    <tr>
+        <th>Priority:</th>
+        <td th:text="${item.id.priority}"></td>
+    </tr>
+</table>
+
+<!-- Add additional details as needed -->
+
+</body>
+</html>

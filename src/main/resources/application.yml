@@ -1,0 +1,30 @@
+spring:
+  data:
+    cassandra:
+      keyspace-name: demo_projects
+      username: sfXdUYCDbxODHuZNOCZefxiO
+      password: OJZIQ+q.rJUL8OJaqp7q2IYyUQ+-c8OZJQ09NvP7GHPnagmEDafsoUfcrEbNmMKc021Oj1jbH0anBgRZZQN0dLwJZcFhie8qoIkdp8es5v,k47j88edNcYOhoMh5X3Ry
+      schema-action: create-if-not-exists
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+  main:
+    allow-circular-references: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false # Disable caching for development
+    mode: HTML
+  kafka:
+    bootstrap-servers: localhost:9092
+
+datastax.astra:
+  secure-connect-bundle: secure-connect.zip
+
+astra.db:
+  id: ded82598-a7fa-48cb-bb2a-77185d1c7d4e
+  region: europe-west1
+  keyspace: demo_projects
+  application.token: AstraCS:sfXdUYCDbxODHuZNOCZefxiO:290c152ebaeb792cff62f2c20f5e21772133cee78b2d802da736e8db3a00b52d

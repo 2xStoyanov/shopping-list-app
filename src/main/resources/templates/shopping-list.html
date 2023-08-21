@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shopping List</title>
+</head>
+<body>
+<h1>Shopping List</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Priority</th>
+        <th></th> <!-- Empty header for buttons -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${shoppingList}" th:attr="onclick='fetchItemDetails(\'' + ${item.id.id} + '\')'">
+        <td th:text="${item.itemName}"></td>
+        <td th:text="${item.quantity}"></td>
+        <td th:text="${item.category}"></td>
+        <td th:text="${item.id.status}"></td>
+        <td th:text="${item.id.priority}"></td>
+        <td>
+            <a th:href="@{/items/{id}/edit(id=${item.id.id})}">Edit</a>
+            <a th:href="@{/items/{id}/delete(id=${item.id.id})}" onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{/items/create}" class="btn btn-primary">Add New Item</a>
+
+<script th:inline="javascript">
+    function fetchItemDetails(itemId) {
+        window.location.href = '/items/' + itemId;
+    }
+</script>
+</body>
+</html>
